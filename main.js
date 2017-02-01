@@ -24,7 +24,7 @@ function success(pos) {
             var temp = document.getElementById('temp');
             temp.innerHTML = Math.round(result.main.temp) + '<a href="#" onclick="celcius('+result.main.temp+')"> °C</span>';
             var image = document.getElementById('image');
-            image.src = 'http://openweathermap.org/img/w/'+result.weather[0].icon+'.png';
+            image.src = 'https://openweathermap.org/img/w/'+result.weather[0].icon+'.png';
         }})};
   hola();
 
