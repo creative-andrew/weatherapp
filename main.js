@@ -16,7 +16,7 @@ function success(pos) {
   console.log('Longitude: ' + crd.longitude);
   console.log('More or less ' + crd.accuracy + ' meters.');
   function hola (){
-       var urla = 'http://api.openweathermap.org/data/2.5/weather?lat='+crd.latitude+'&lon='+crd.longitude+'&units=metric&appid=c435775454b539f2dec5a3097b55e264'
+       var urla = 'https://api.openweathermap.org/data/2.5/weather?lat='+crd.latitude+'&lon='+crd.longitude+'&units=metric&appid=c435775454b539f2dec5a3097b55e264'
         $.ajax({url: urla, success: function(result){
             console.log(result);
             var country = document.getElementById("country");
