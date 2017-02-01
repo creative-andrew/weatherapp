@@ -3,6 +3,7 @@ $("button").click(function (){
    $('#loader').show();
 
 
+
 var options = {
   enableHighAccuracy: true,
   timeout: 5000,
@@ -18,7 +19,7 @@ function success(pos) {
   console.log('Longitude: ' + crd.longitude);
   console.log('More or less ' + crd.accuracy + ' meters.');
   function hola (){
-       var urla = 'http://api.openweathermap.org/data/2.5/weather?lat='+crd.latitude+'&lon='+crd.longitude+'&units=metric&appid=c435775454b539f2dec5a3097b55e264'
+       var urla = 'https://api.openweathermap.org/data/2.5/weather?lat='+crd.latitude+'&lon='+crd.longitude+'&units=metric&appid=c435775454b539f2dec5a3097b55e264'
         $.ajax({url: urla, success: function(result){
             console.log(result);
             $('#loader').hide();
@@ -27,7 +28,7 @@ function success(pos) {
             var temp = document.getElementById('temp');
             temp.innerHTML = Math.round(result.main.temp) + '<a href="#" onclick="celcius('+result.main.temp+')"> °C</span>';
             var image = document.getElementById('image');
-            image.src = 'http://openweathermap.org/img/w/'+result.weather[0].icon+'.png';
+            image.src = 'https://openweathermap.org/img/w/'+result.weather[0].icon+'.png';
         }})};
   hola();
 
