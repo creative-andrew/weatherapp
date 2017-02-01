@@ -1,5 +1,6 @@
+$('#loader').hide();
 $("button").click(function (){
-
+   $('#loader').show();
 
 
 var options = {
@@ -11,6 +12,7 @@ var options = {
 function success(pos) {
   var crd = pos.coords;
 
+
   console.log('Your current position is:');
   console.log('Latitude : ' + crd.latitude);
   console.log('Longitude: ' + crd.longitude);
@@ -19,6 +21,7 @@ function success(pos) {
        var urla = 'http://api.openweathermap.org/data/2.5/weather?lat='+crd.latitude+'&lon='+crd.longitude+'&units=metric&appid=c435775454b539f2dec5a3097b55e264'
         $.ajax({url: urla, success: function(result){
             console.log(result);
+            $('#loader').hide();
             var country = document.getElementById("country");
             country.innerHTML = result.sys.country + ', ' + result.name;
             var temp = document.getElementById('temp');
